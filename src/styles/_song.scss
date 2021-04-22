@@ -1,0 +1,51 @@
+.song-container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .song-cover {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    animation: spin 60s linear infinite forwards;
+    animation-play-state: paused;
+    &.spin {
+      animation-play-state: running;
+    }
+  }
+  h2 {
+    padding: 3rem 1rem 1rem 1rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .song-container {
+    h2 {
+      padding: 2rem 1rem 1rem 1rem;
+    }
+    .song-cover {
+      width: 250px;
+      height: 250px;
+    }
+  }
+}
